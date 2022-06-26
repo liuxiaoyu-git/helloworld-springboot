@@ -3,7 +3,8 @@ stages:
  - build                         
  - deploy  
      
-build_image:                                       
+build_image:  
+  image: docker:20.10.16                                     
   before_script:
     - docker login -u $docker_user -p $docker_pass
   script: 
