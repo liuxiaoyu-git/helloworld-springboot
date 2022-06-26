@@ -1,5 +1,16 @@
-maven-build:
-  image: maven:3-jdk-11
-  stage: build
-  script: "mvn package -B"
-   
+stages:  
+ - test                        
+ - build                         
+ - deploy  
+
+run_tests:
+    image: openjdk-11-jdk
+    before_script:
+        - apt-get update && apt-get install make
+    script: 
+        -make test
+                                 
+maven-build:                     
+  image: maven:3-jdk-11          
+  stage: build                   
+  script: "mvn package -B"       
