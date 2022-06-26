@@ -3,8 +3,6 @@ stages:
  - build                         
  - deploy  
 
-image: maven:3-jdk-11          
-
 run_tests:
     before_script:
         - apt-get update && apt-get install make
@@ -12,4 +10,5 @@ run_tests:
         -make test
                                  
 maven-build:                                       
+  image: maven:3-jdk-11     
   script: "mvn package -B"       
