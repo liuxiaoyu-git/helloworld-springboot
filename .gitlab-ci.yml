@@ -5,11 +5,7 @@ stages:
      
 build_image:  
   stage : build
-  services:
-    - docker:18-dind
-  before_script:
-    - docker login -u $docker_user -p $docker_pass
-  script: 
+   script: 
       - docker build -t rajaking786/gitlab-demo:springboot-app-1.0
       - docker push  rajaking786/gitlab-demo:springboot-app-1.0
             
