@@ -7,5 +7,6 @@ build_image:
   stage : build
    script: 
       - docker build -t rajaking786/gitlab-demo:springboot-app-1.0
+      - docker login -u $docker_user -p $docker_pass
       - docker push  rajaking786/gitlab-demo:springboot-app-1.0
             
