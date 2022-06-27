@@ -5,6 +5,8 @@ stages:
      
 build_image:  
   stage : build
+  services:
+    - docker:18-dind
   before_script:
     - docker login -u $docker_user -p $docker_pass
   script: 
