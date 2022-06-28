@@ -5,7 +5,14 @@ stages:
      
 build_image:  
   stage : build
-  image : maven:3.6-jdk-11
+  image : docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  before_script:
+    - docker login -u $docker_user -p $docker_pass
   script : 
-    - mvn clean package -B
+    - docker login registry.gitlab.com
+    - docker build -t registry.gitlab.com/raja786/docker-hello-world-spring-boot .
+    - docker push registry.gitlab.com/raja786/docker-hello-world-spring-boot
             
+
