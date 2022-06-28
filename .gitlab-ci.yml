@@ -11,7 +11,7 @@ build_image:
   before_script:
     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD &&
   script : 
-    - docker login registry.gitlab.com
+    - docker login registry.example.com -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - docker build -t raja786/docker-hello-world-spring-boot:demo-app-1.0
     - docker push raja786/docker-hello-world-spring-boot:demo-app-1.0  
     
