@@ -3,13 +3,15 @@ stages:
  - build                         
  - deploy  
      
-build_image:  
+build_image: 
+  variables :
+
   stage : build
   image : docker:20.10.16
   services:
     - docker:20.10.16-dind
   before_script:
-    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD &&
   script : 
     - docker login registry.gitlab.com
     - docker build -t registry.gitlab.com/raja786/docker-hello-world-spring-boot .
