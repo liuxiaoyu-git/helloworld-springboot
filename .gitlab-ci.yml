@@ -9,8 +9,11 @@ build_image:
   services:
     - docker:20.10.16-dind
   before_script:
-    - docker login -u $docker_user -p $docker_pass
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   script : 
     - docker login registry.gitlab.com
+    - docker build -t registry.gitlab.com/raja786/docker-hello-world-spring-boot .
+    - docker push registry.gitlab.com/raja786/docker-hello-world-spring-boot
+            
     
 
