@@ -14,8 +14,8 @@ build_image:
     DOCKER_TLS_CERTDIR: ""
   script : 
     - docker -v
-    - docker build -t venkatesan06/git-action:app .
+    - docker build -t rajaking786/springboot2:ICT .
     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - docker push venkatesan06/git-action:app    
+    - docker push rajaking786/springboot2:ICT 
 
 
