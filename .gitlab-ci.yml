@@ -14,4 +14,5 @@ build_image:
     DOCKER_TLS_CERTDIR: ""
   script : 
     - docker -v
+    - docker build -t test .
 
