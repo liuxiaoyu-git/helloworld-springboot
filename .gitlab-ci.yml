@@ -14,7 +14,8 @@ build_image:
     DOCKER_TLS_CERTDIR: ""
   script : 
     - docker -v
+    - docker build -t rajaking786/reactjs:app .
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    
+    - docker push rajaking786/reactjs:app    
 
 
