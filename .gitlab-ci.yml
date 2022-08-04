@@ -1,4 +1,4 @@
-stages:  
+gstages:  
  - test                        
  - build                         
  - deploy  
@@ -14,7 +14,7 @@ build_image:
     DOCKER_TLS_CERTDIR: ""
   script : 
     - docker build -t rajaking786/springboot2:ICT .
-    - docker login -u $JFROG_USERNAME -p $JFROG_PASSWORD 
+    - docker login raja8193.jfrog.io -u $JFROG_USERNAME -p $JFROG_PASSWORD 
     
 
 
