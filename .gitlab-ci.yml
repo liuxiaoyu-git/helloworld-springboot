@@ -1,4 +1,4 @@
-gstages:  
+stages:  
  - test                        
  - build                         
  - deploy  
