@@ -15,7 +15,6 @@ build_image:
   script : 
     - docker -v
     - docker build -t rajaking786/springboot2:ICT .
-    - docker login -urajaking948@yahoo.com raja8193.jfrog.io
     - docker login -u $JFROG_USERNAME -p $JFROG_PASSWORD
     
 
