@@ -13,7 +13,6 @@ build_image:
     DOCKER_DRIVER: overlay2
     DOCKER_TLS_CERTDIR: ""
   script : 
-    - docker -v
     - docker build -t rajaking786/springboot2:ICT .
     - docker login -u $JFROG_USERNAME -p $JFROG_PASSWORD $JFROG_REGISTRY
     
